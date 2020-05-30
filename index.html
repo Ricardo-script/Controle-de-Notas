@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js"></script>
+    <title>Página Inicial</title>
+</head>
+<body onload="ListarDados()">
+    <header>
+        <img src="/Imagens/Truck.png" width="130px">
+    </header>
+    <div class="cabecalho">
+        <img src="Imagens/seta-direita.png">
+    </div>
+
+        <a href="#" class="add-nota"><label for="check">Add NF</label></a>
+        <input type="checkbox" id="check" class="novo_form" hidden>
+
+    <div class="novo_cadastro"><!--Campos para gravação-->
+        <div class="recheader"><h4>Adicionar nova Nota Fiscal</h4>
+            <a href="#" class="fechar"><label for="check">X</label></a>
+
+                <select id="tipo"><br>
+                    <option value="Entrada">Entrada</option>
+                    <option value="Saida">Saida</option>
+                    </select><br>
+            <label id="tnf">Nº NF:</label><br>
+                <input type="text" id="nf"></input><br>
+            <label id="tdata">Data NF:</label><br>
+                <input type="text" id="data"></input><br>
+            <label id="tcliente">Cliente Faturado:</label><br>
+                <input type="text" id="cliente"></input><br>
+            <label id="tremetente">Remetente:</label><br>
+                <input type="text" id="remetente"></input><br>
+            <label id="tcidade">Cidade Destino:</label><br>
+                 <input type="text" id="cidade"></input><br>
+            <label id="tdestinatario">Destinatário:</label><br>
+                <input type="text" id="destinatario"></input><br>
+            <label id="tuf">UF:</label><br>
+                <input type="text" id="uf"></input><br>
+            <label id="tprazo">Prazo Entrega:</label><br>
+              <!--<textarea name="" id="prazo" cols="30" rows="10"></textarea>--> 
+              <input type="text" id="prazo"></input>
+                <a href="#" class="btn-pesquisar" id="limpar" onclick="LimparDados()">Limpar</a>
+                <a href="#" class="btn-pesquisar" id="Pesquisar" style="left: 105px;">Pesquisar</a>
+                <a href="#" class="btn-pesquisar" id="Salvar" style="left: 220px;" onclick="Enviar()">Salvar</a>
+                
+        </div>
+    </div>
+    <div class="cab-cont">
+        <h3>Controle de Notas Fiscais</h3>
+    </div>
+    <div class="campos"><!--Campos para pesquisa-->
+        <select id="ptipo">
+            <option value=""></option>
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+        </select>
+        <label id="um"><img src="Imagens/icon-nfe.png" width="25px"><input type="text" placeholder="Nº NF:" id="pnf"></label>
+        <label><img src="Imagens/calendario.png" width="25px"><input type="text" placeholder="Data NF:" id="pdata"></label>
+        <label><img src="Imagens/user.png" width="25px"><input type="text" placeholder="Cliente Faturado:" id="pcliente"></label>
+        <label><img src="Imagens/remet.png" width="25px"><input type="text" placeholder="Remetente:" id="premetente"></label>
+        <label><img src="Imagens/city.png" width="25px"><input type="text" placeholder="Cidade:" id="pcidade"></label>
+        <label><img src="Imagens/remet.png" width="25px"><input type="text" placeholder="Destinatário:" id="pdestinatario"></label>
+        <label><img src="Imagens/uf.png" width="25px"><input type="text" placeholder="UF:" id="puf"></label>
+        <a href="#" class="btn-pesquisar" onclick="Pesquisar()">Pesquisa</a>
+    </div>
+    <div class="cab-form">
+
+    </div>
+    <div class="container">
+        <table class="minhatabela">
+            <thead>
+                <tr>
+                    <td>Tipo de Transação</td>
+                    <td>Nota Fiscal</td>
+                    <td>Data da NF</td>
+                    <td>Cliente Faturado</td>
+                    <td>Remetente</td>
+                    <td>Cidade Origem</td>
+                    <td>Destinatário</td>
+                    <td>UF</td>
+                    <td>Prazo Entrega</td>
+                </tr>
+            </thead>
+            <tbody id="tabela">
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
